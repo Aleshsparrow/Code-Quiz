@@ -53,10 +53,11 @@ function buildQuiz(){
     for (var i = 0; i < choices1.length; i++){
         // console.log(myQuestions[i]);
         var optionsBtn = document.createElement("button");
-        optionsBtn.textContent = (choices1[i])
+        optionsBtn.textContent = (choices1[i])         
+        optionsBtn.setAttribute("data-correct", choices1[3])
+        optionsBtn.onclick = choices1[3]
         buttons.appendChild(optionsBtn);  
-        optionsBtn.setAttribute("data-correct", choices1[i])
-        optionsBtn.onclick = choices1[3] 
+        console.log(choices1[3])
     }
     
     // optionsBtn.addEventListener("click", optionsBtn)
