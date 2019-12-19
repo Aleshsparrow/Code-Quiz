@@ -1,0 +1,31 @@
+body{
+    padding: 0px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+/* .navbar{
+    background-color: white;
+    color: cadetblue;
+    padding: 20px;
+    margin: 15px;
+} */
+/* .container{
+    margin-top: 30px;
+}
+#answer-btns{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    padding: 15px;
+}
+.controls{
+    margin-left: 15px;
+    }
+.control-btn{
+    width: 30%;
+}
+button:hover{
+    color: blue;
+} */
