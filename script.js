@@ -42,7 +42,8 @@ function startGame (){
     buildQuiz()
 }
 startBtn.addEventListener("click", startGame)
-nextBtn.addEventListener("click", secondQue)
+
+
 // questionQ.textcontent(myQuestions[0].question[0])
 // console.log(myQuestions.question)
 
@@ -74,7 +75,7 @@ function buildQuiz(){
         buttons.appendChild(optionsLbl)
         console.log(choices1[3])
     }
-    
+    nextBtn.addEventListener("click",  removeElement)
     // optionsBtn.addEventListener("click", optionsBtn)
     // console.log("click")
 }
@@ -100,7 +101,7 @@ function removeElement() {
     element.parentNode.removeChild(element);
 }
 
-
+nextBtn.addEventListener("click", secondQue)
 
 function secondQue(){
     
