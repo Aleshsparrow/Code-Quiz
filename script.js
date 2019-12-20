@@ -75,7 +75,7 @@ function buildQuiz(){
         buttons.appendChild(optionsLbl)
         console.log(choices1[3])
     }
-    nextBtn.addEventListener("click",  removeElement)
+    // nextBtn.addEventListener("click",  removeElement)
     // optionsBtn.addEventListener("click", optionsBtn)
     // console.log("click")
 }
@@ -95,11 +95,11 @@ function buildQuiz(){
 //         endGame();
 //     };
 // }
-function removeElement() {
-    // Removes an element from the document
-    var element = document.getElementById("question");
-    element.parentNode.removeChild(element);
-}
+// function removeElement() {
+//     // Removes an element from the document
+//     var element = document.getElementById("question");
+//     element.parentNode.removeChild(element);
+// }
 
 nextBtn.addEventListener("click", secondQue)
 
