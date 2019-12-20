@@ -39,10 +39,10 @@ var myQuestions = [
 function startGame (){
     document.getElementById("start").style.display = "none"
     
+    nextBtn.addEventListener("click", buildQuiz)
     buildQuiz()
 }
 startBtn.addEventListener("click", startGame)
-
 
 // questionQ.textcontent(myQuestions[0].question[0])
 // console.log(myQuestions.question)
@@ -50,22 +50,26 @@ startBtn.addEventListener("click", startGame)
 function buildQuiz(){
     
     var questionDiv = document.createElement("div");
-    questionDiv.textContent = (myQuestions[0].question);
+    questionQ.innerHTML = "";
+    buttons.innerHTML = "";
+    questionDiv.textContent = (myQuestions[questionCount].question);
     questionQ.appendChild(questionDiv);
-    var choices1 = myQuestions[0].choices;
+    var choices1 = myQuestions[questionCount].choices;
+    
     var answer1 = choices1[3]
     console.log(answer1)
-    for (var i = 0; i < myQuestions[0].choices.length; i++){
+    for (var i = 0; i < myQuestions[questionCount].choices.length; i++){
         // console.log(myQuestions[i]);
         var optionsBtn = document.createElement("input");
+        
         optionsBtn.setAttribute("type", "radio") //myQuestions[0].choices[i]
-        optionsBtn.setAttribute("id", myQuestions[0].choices[i])
+        optionsBtn.setAttribute("id", myQuestions[questionCount].choices[i])
         optionsBtn.setAttribute("name", "answer")
         // optionsBtn.setAttribute("value", myQuestions[0].choices[i])
         // optionsBtn.setAttribute("name", 'answers')
         var optionsLbl = document.createElement("label");
-        optionsLbl.setAttribute("for", myQuestions[0].choices[i])
-        optionsLbl.textContent=myQuestions[0].choices[i];
+        optionsLbl.setAttribute("for", myQuestions[questionCount].choices[i])
+        optionsLbl.textContent=myQuestions[questionCount].choices[i];
 
 
         optionsBtn.textContent = (choices1[i])         
@@ -75,6 +79,9 @@ function buildQuiz(){
         buttons.appendChild(optionsLbl)
         console.log(choices1[3])
     }
+    
+    questionCount++
+
     // nextBtn.addEventListener("click",  removeElement)
     // optionsBtn.addEventListener("click", optionsBtn)
     // console.log("click")
@@ -101,37 +108,37 @@ function buildQuiz(){
 //     element.parentNode.removeChild(element);
 // }
 
-nextBtn.addEventListener("click", secondQue)
+// nextBtn.addEventListener("click", secondQue)
 
-function secondQue(){
+// function secondQue(){
     
-    var questionDiv = document.createElement("div");
-    questionDiv.textContent = (myQuestions[1].question);
-    questionQ.appendChild(questionDiv);
-    var choices1 = myQuestions[1].choices;
-    var answer1 = choices1[3]
-    console.log(answer1)
-    for (var i = 0; i < myQuestions[1].choices.length; i++){
-        // console.log(myQuestions[i]);
-        var optionsBtn = document.createElement("input");
-        optionsBtn.setAttribute("type", "radio") //myQuestions[0].choices[i]
-        optionsBtn.setAttribute("id", myQuestions[1].choices[i])
-        optionsBtn.setAttribute("name", "answer")
-        // optionsBtn.setAttribute("value", myQuestions[0].choices[i])
-        // optionsBtn.setAttribute("name", 'answers')
-        var optionsLbl = document.createElement("label");
-        optionsLbl.setAttribute("for", myQuestions[1].choices[i])
-        optionsLbl.textContent=myQuestions[1].choices[i];
+//     var questionDiv = document.createElement("div");
+//     questionDiv.textContent = (myQuestions[1].question);
+//     questionQ.appendChild(questionDiv);
+//     var choices1 = myQuestions[1].choices;
+//     var answer1 = choices1[3]
+//     console.log(answer1)
+//     for (var i = 0; i < myQuestions[1].choices.length; i++){
+//         // console.log(myQuestions[i]);
+//         var optionsBtn = document.createElement("input");
+//         optionsBtn.setAttribute("type", "radio") //myQuestions[0].choices[i]
+//         optionsBtn.setAttribute("id", myQuestions[1].choices[i])
+//         optionsBtn.setAttribute("name", "answer")
+//         // optionsBtn.setAttribute("value", myQuestions[0].choices[i])
+//         // optionsBtn.setAttribute("name", 'answers')
+//         var optionsLbl = document.createElement("label");
+//         optionsLbl.setAttribute("for", myQuestions[1].choices[i])
+//         optionsLbl.textContent=myQuestions[1].choices[i];
     
     
-        optionsBtn.textContent = (choices1[i])         
-        optionsBtn.setAttribute("data-correct", choices1[3])
-        optionsBtn.onclick = choices1[3]
-        buttons.appendChild(optionsBtn);  
-        buttons.appendChild(optionsLbl)
-        console.log(choices1[3])
-            }
-    }
+//         optionsBtn.textContent = (choices1[i])         
+//         optionsBtn.setAttribute("data-correct", choices1[3])
+//         optionsBtn.onclick = choices1[3]
+//         buttons.appendChild(optionsBtn);  
+//         buttons.appendChild(optionsLbl)
+//         console.log(choices1[3])
+//             }
+//     }
 
 
 
